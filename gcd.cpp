@@ -9,6 +9,9 @@ long long int compute_gcd(long long int num1,long long int num2)
     long long int rem;
 
     rem = remainder(num1,num2);
+    if(rem<0)
+        rem = rem*(-1);
+    
     compute_gcd(num2,rem);
 }
 
