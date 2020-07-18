@@ -1,0 +1,19 @@
+class Solution {
+  public:
+    int legthofSubstring(String s){
+        unordered_map<char,nt> myMap;
+        int result = 0;
+        int start = 0;
+        
+        for(int i = 0; i <= s.size(); i++){
+            if(myMap.find(s[i])!=myMap.end()){
+                result = max(result,i-start);
+                start = max(start,1+myMap[s[i]]);
+            }
+            myMap[s[i]] = i;
+        }
+        result = max(result,(int)s.size()-start);
+        
+        return result;
+    }
+};
