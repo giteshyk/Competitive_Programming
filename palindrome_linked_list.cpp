@@ -17,14 +17,13 @@ public:
     if(head == NULL || head->next == NULL)
         return true;
         
-    while(fast -> next && fast -> next -> next){
+    while(fast  && fast -> next ){
             slow = slow -> next;
             fast = fast -> next -> next;
         } 
         
-     slow->next = reverse_list(slow->next);
-     slow = slow -> next;
-     
+     slow = reverse_list(slow);
+    
      while(slow){
         if(slow->value != head->value)
             return false;
