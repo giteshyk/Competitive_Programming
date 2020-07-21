@@ -35,7 +35,7 @@ public:
                         k_node = k_node -> next;
                 }
                 
-                new_head = reverse_this(head,k_node);         //new head
+                new_head = reverse_this(head,k_node);         
                 head -> next = reverse_k_group(k_node ,k);
                 
          return new_head;
