@@ -1,7 +1,7 @@
-//INTEGER TO ROMAN:
-
 class Solution {
 public:
+    
+    //INTEGER TO ROMAN:
     string intToRoman(int num) {
         string M[4]  = {"","M","MM","MMM"};
         string C[10] = {"","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"};
@@ -10,12 +10,8 @@ public:
         
         return M[num/1000] + C[(num/100) % 10] + X[(num/10) % 10] + I[num % 10];
     }
-};
-
-//ROMAN TO INTEGER:
-
-class Solution {
-public:
+    
+    //ROMAN TO INTEGER:
     int romanToInt(string s) {
         unordered_map<char,int> romans = {{'I',1},
                                          {'V',5},
@@ -34,5 +30,5 @@ public:
                 sum += romans[s[i]];
         }
         return sum;
-    }
+  }
 };
